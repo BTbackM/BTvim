@@ -15,6 +15,7 @@ function M.load()
   -- Normal keymaps
   kmap("n", "<C-s>", ":w<CR>", opts)
   kmap("n", "<C-q>", ":q<CR>", opts)
+  kmap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 end
 
 return M
