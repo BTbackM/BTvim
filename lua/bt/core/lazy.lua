@@ -25,7 +25,7 @@ lazy.setup({
   },
   install = {
     missing = true,
-    -- colorscheme = { "habamax" }
+    colorscheme = { "gruvbox" }
   },
   checker = {
     enabled = true,
