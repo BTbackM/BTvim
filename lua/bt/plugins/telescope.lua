@@ -2,6 +2,11 @@ local opts = {
 	pickers = {
 		git_commits = {
 			previewer = false,
+			git_command = {
+				"git",
+				"log",
+				"--date=format:%Y-%m-%d %H:%M:%S",
+			},
 		}
 	},
 }
