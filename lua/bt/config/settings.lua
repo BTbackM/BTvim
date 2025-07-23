@@ -6,6 +6,7 @@ function M.load()
     list = true,
     number = true,
     relativenumber = true,
+		signcolumn = "yes",
     shiftwidth = 2,
     smartindent = true,
     tabstop = 2,
