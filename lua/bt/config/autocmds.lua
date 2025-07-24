@@ -6,5 +6,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		kmap("gl", vim.diagnostic.open_float, "Open float diagnostic")
+		kmap("gd", ":lua vim.lsp.buf.definition()<CR>", "Go to definition")
+		kmap("gD", ":lua vim.lsp.buf.declaration()<CR>", "Go to declaration")
+		kmap("gi", ":lua vim.lsp.buf.implementation()<CR>", "Go to implementation")
+		kmap("K", ":lua vim.lsp.buf.hover()<CR>", "Hover")
 	end
 })

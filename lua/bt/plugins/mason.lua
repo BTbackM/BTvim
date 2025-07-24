@@ -36,6 +36,7 @@ local opts = {
   ensure_installed = {
     -- LSP servers
     "lua-language-server",
+		"gopls",
 
     -- Formatters
     "stylua",

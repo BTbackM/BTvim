@@ -1,5 +1,6 @@
 vim.lsp.enable({
-  "lua-language-server",
+	"lua-language-server",
+	"gopls",
 })
 
 local function lsp_status()
