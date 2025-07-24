@@ -17,6 +17,7 @@ local kmaps = {
 
 	-- LSP keymaps
 	{ "<leader>lr", "<CMD>Telescope lsp_references<CR>", desc = "References" },
+	{ "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
 
 	-- Git
 	{ "<leader>gb", "<CMD>Telescope git_branches<CR>", desc= "Branches" },
