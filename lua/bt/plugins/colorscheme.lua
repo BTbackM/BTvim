@@ -13,11 +13,18 @@ end
 local function get_highlights()
 	local hls = {}
 
-	local nvim_tree_hl = require "bt.colorscheme.gruvbox.hl.nvim-treesitter"
+	-- Plugin highlight
+	local nvim_treesitter_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter"
+	local nvim_tree_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-tree"
+
+	-- LSP highlight
+	local lua_hl = require "bt.colorscheme.gruvbox.hl.lsp.lua"
 
 	hls = concat_highlights(
 		hls,
-		nvim_tree_hl
+		nvim_tree_hl,
+		nvim_treesitter_hl,
+		lua_hl
 	)
 
 	return hls

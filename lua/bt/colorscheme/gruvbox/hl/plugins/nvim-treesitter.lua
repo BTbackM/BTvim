@@ -22,6 +22,8 @@ return {
 		bold = true,
 		italic = false,
 	},
+	["@keyword.function"] = { link = "@keyword" },
+	["@keyword.repeat"] = { link = "@keyword" },
 	["@keyword.return"] = { link = "@keyword" },
 
 	-- Punctuation
