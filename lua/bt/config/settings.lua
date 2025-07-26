@@ -2,6 +2,7 @@ local M = {}
 
 function M.load()
   local options = {
+		expandtab = true,
     hlsearch = false,
     list = true,
     number = true,
