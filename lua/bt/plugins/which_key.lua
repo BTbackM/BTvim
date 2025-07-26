@@ -5,24 +5,28 @@ local opts = {
 			{ "<leader>f", group = "Find" },
 			{ "<leader>g", group = "Git" },
 			{ "<leader>l", group = "LSP" },
+			{ "<leader>c", group = "Conform" },
 		},
 	},
 }
 
 local kmaps = {
 	-- Find keymaps
-	{ "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "Buffers" },
-	{ "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Files" },
-	{ "<leader>fk", "<CMD>Telescope keymaps<CR>", desc = "Keymaps" },
-	{ "<leader>fk", "<CMD>Telescope live_grep<CR>", desc = "Live grep" },
+	{ "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
+	{ "<leader>ff", ":Telescope find_files<CR>", desc = "Files" },
+	{ "<leader>fk", ":Telescope keymaps<CR>", desc = "Keymaps" },
+	{ "<leader>fk", ":Telescope live_grep<CR>", desc = "Live grep" },
 
 	-- LSP keymaps
-	{ "<leader>lr", "<CMD>Telescope lsp_references<CR>", desc = "References" },
+	{ "<leader>lr", ":Telescope lsp_references<CR>", desc = "References" },
 	{ "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
 
 	-- Git
-	{ "<leader>gb", "<CMD>Telescope git_branches<CR>", desc= "Branches" },
-	{ "<leader>gc", "<CMD>Telescope git_commits<CR>", desc= "Commits" },
+	{ "<leader>gb", ":Telescope git_branches<CR>", desc= "Branches" },
+	{ "<leader>gc", ":Telescope git_commits<CR>", desc= "Commits" },
+
+	-- Conform
+	{ "<leader>cf", ":lua require('conform').format({ async = true })<CR>", desc = "Format" },
 }
 
 return {
