@@ -22,7 +22,9 @@ return {
 		bold = true,
 		italic = false,
 	},
+	["@keyword.conditional"] = { link = "@keyword" },
 	["@keyword.function"] = { link = "@keyword" },
+	["@keyword.operator"] = { link = "@keyword" },
 	["@keyword.repeat"] = { link = "@keyword" },
 	["@keyword.return"] = { link = "@keyword" },
 
