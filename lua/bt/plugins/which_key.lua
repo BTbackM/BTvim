@@ -14,6 +14,7 @@ local kmaps = {
 	{ "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "Buffers" },
 	{ "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Files" },
 	{ "<leader>fk", "<CMD>Telescope keymaps<CR>", desc = "Keymaps" },
+	{ "<leader>fk", "<CMD>Telescope live_grep<CR>", desc = "Live grep" },
 
 	-- LSP keymaps
 	{ "<leader>lr", "<CMD>Telescope lsp_references<CR>", desc = "References" },
