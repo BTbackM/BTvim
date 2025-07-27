@@ -1,0 +1,16 @@
+local opts = {
+  current_line_blame = false,
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = "eol",
+    delay = 200,
+  },
+  current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
+}
+
+return {
+  "lewis6991/gitsigns.nvim",
+  config = function()
+    require("gitsigns").setup(opts)
+  end,
+}

@@ -1,3 +1,5 @@
+local colors = require "bt.colorscheme.gruvbox.colors"
+
 local function concat_highlights(...)
 	local full_hls = {}
 
@@ -11,7 +13,13 @@ local function concat_highlights(...)
 end
 
 local function get_highlights()
-	local hls = {}
+	local hls = {
+    ["CursorLineNr"] = {
+      fg = colors["custom"].blue,
+      bold = true,
+      italic = false,
+    },
+  }
 
 	-- Plugin highlight
 	local nvim_treesitter_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter"

@@ -15,7 +15,7 @@ local kmaps = {
 	{ "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
 	{ "<leader>ff", ":Telescope find_files<CR>", desc = "Files" },
 	{ "<leader>fk", ":Telescope keymaps<CR>", desc = "Keymaps" },
-	{ "<leader>fk", ":Telescope live_grep<CR>", desc = "Live grep" },
+	{ "<leader>fl", ":Telescope live_grep<CR>", desc = "Live grep" },
 
 	-- LSP keymaps
 	{ "<leader>lr", ":Telescope lsp_references<CR>", desc = "References" },
@@ -24,6 +24,7 @@ local kmaps = {
 	-- Git
 	{ "<leader>gb", ":Telescope git_branches<CR>", desc= "Branches" },
 	{ "<leader>gc", ":Telescope git_commits<CR>", desc= "Commits" },
+  { "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", desc= "Toggle blame" },
 
 	-- Conform
 	{ "<leader>cf", ":lua require('conform').format({ async = true })<CR>", desc = "Format" },

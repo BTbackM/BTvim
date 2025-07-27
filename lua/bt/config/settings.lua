@@ -2,7 +2,12 @@ local M = {}
 
 function M.load()
 	local options = {
+    cursorline = true,
 		expandtab = true,
+    foldmethod = "expr",
+    foldexpr = "v:lua.vim.lsp.foldexpr()",
+    foldlevel = 99,
+    foldenable = true,
 		hlsearch = false,
 		list = true,
 		number = true,
