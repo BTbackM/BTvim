@@ -2,6 +2,7 @@ local M = {}
 
 function M.load()
 	local options = {
+    clipboard = "unnamedplus",
     cursorline = true,
 		expandtab = true,
     foldmethod = "expr",
