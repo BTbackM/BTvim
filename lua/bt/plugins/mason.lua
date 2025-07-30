@@ -34,6 +34,7 @@ local opts = {
 		-- LSP servers
 		"lua-language-server", -- Lua
 		"gopls", -- Go
+    "omnisharp", -- C#
 
 		-- Formatters
 		"gofumpt", -- Go

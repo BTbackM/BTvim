@@ -1,6 +1,7 @@
 vim.lsp.enable({
 	"lua-language-server",
 	"gopls",
+  "omnisharp",
 })
 
 local function lsp_status()
