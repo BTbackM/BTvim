@@ -1,3 +1,5 @@
+if false then return {} end
+
 local opts = {
 	keymaps = {
 		accept_suggestion = "<C-l>",

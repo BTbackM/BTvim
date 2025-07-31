@@ -1,3 +1,5 @@
+if false then return {} end
+
 local colors = require "bt.colorscheme.gruvbox.colors"
 
 local function concat_highlights(...)

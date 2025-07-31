@@ -1,3 +1,5 @@
+if false then return {} end
+
 local function nvim_tree_config(_, opts)
   require "nvim-tree".setup(opts)
 end

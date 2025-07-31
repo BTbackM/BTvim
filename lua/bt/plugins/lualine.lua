@@ -1,3 +1,5 @@
+if false then return {} end
+
 local function lualine_config(_, opts)
   require "lualine".setup(opts)
 end

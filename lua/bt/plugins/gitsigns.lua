@@ -1,3 +1,5 @@
+if false then return {} end
+
 local opts = {
   current_line_blame = false,
   current_line_blame_opts = {
