@@ -1,3 +1,5 @@
+if false then return {} end
+
 local opts = {
 	snippets = {},
 	signature = {

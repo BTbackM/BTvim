@@ -1,3 +1,5 @@
+if false then return {} end
+
 local opts = {
 	formatters_by_ft = {
 		go = { "gofumpt", "goimports" },
