@@ -13,6 +13,7 @@ function M.load()
   kmap("i", "<C-s>", "<Esc>:w<CR>", opts)
 
   -- Normal keymaps
+  kmap("n", "<Esc>", ":nohlsearch<CR>", opts)
 	kmap("n", "<C-h>", "<C-w>h", opts)
 	kmap("n", "<C-j>", "<C-w>j", opts)
 	kmap("n", "<C-k>", "<C-w>k", opts)
