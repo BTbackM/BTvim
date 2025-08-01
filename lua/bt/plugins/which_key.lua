@@ -49,17 +49,6 @@ local opts = {
 }
 
 local kmaps = {
-	-- Find keymaps
-	{ "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
-	{
-		"<leader>ff",
-		":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
-		desc = "Files",
-	},
-	{ "<leader>fF", ":Telescope find_files<CR>", desc = "Files" },
-	{ "<leader>fk", ":Telescope keymaps<CR>", desc = "Keymaps" },
-	{ "<leader>fl", ":Telescope live_grep<CR>", desc = "Live grep" },
-
 	-- LSP keymaps
 	{ "<leader>lr", ":Telescope lsp_references<CR>", desc = "References" },
 	{ "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
