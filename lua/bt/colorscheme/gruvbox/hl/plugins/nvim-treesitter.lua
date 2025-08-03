@@ -44,8 +44,24 @@ return {
 	},
 	["@constant"] = {
 		fg = colors["custom"].purple,
-		bold = true,
+		bold = false,
 		italic = false,
 	},
 	["@boolean"] = { link = "@constant" },
+
+  -- Types
+  ["@type"] = {
+    fg = colors["custom"].dark_yellow,
+    bold = false,
+    italic = false,
+  },
+  ["@type.go"] = { link = "@type" },
+  ["@type.builtin.go"] = { link = "@type" },
+
+  -- Link
+  ["@markup.link.label.markdown_inline"] = {
+    fg = colors["custom"].orange,
+    bold = true,
+    italic = false,
+  },
 }

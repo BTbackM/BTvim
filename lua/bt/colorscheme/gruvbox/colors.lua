@@ -73,6 +73,7 @@ return {
 		-- red = "#750104",
 		red = "#9D0006",
 		yellow = "#FFA400",
+    dark_yellow = "#B57614",
 		-- purple = "#46007A",
 		purple = "#35063E",
 	},
