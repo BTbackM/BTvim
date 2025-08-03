@@ -56,21 +56,22 @@ return {
 
 		-- Load keymaps
 		local builtin = require("telescope.builtin")
-		local theme = require("telescope.themes").get_dropdown({ previewer = false })
 		-- Find keymaps
-		vim.keymaps.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-		vim.keymaps.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
-		vim.keymaps.set("n", "<leader>ff", builtin.find_files(theme), { desc = "Files" })
-		vim.keymaps.set("n", "<leader>fF", builtin.find_files, { desc = "Files" })
-    vim.keymaps.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
-		vim.keymaps.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
-		vim.keymaps.set("n", "<leader>fl", builtin.live_grep, { desc = "Live grep" })
-		vim.keymaps.set("n", "<leader>fw", builtin.grep_string, { desc = "Grep" })
-		vim.keymaps.set("n", "<leader>f.", builtin.oldfiles, { desc = "Recent" })
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
+		vim.keymap.set("n", "<leader>ff", function()
+			builtin.find_files(require("telescope.themes").get_dropdown({ previewer = false }))
+		end, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fF", builtin.find_files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
+		vim.keymap.set("n", "<leader>fl", builtin.live_grep, { desc = "Live grep" })
+		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Grep" })
+		vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "Recent" })
 
 		-- Git keymaps
-		vim.keymaps.set("n", "<leader>gb", builtin.git_branches, { desc = "Branches" })
-		vim.keymaps.set("n", "<leader>gc", builtin.git_commits, { desc = "Commits" })
-		vim.keymaps.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
+		vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Branches" })
+		vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Commits" })
+		vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
 	end,
 }
