@@ -1,19 +1,13 @@
-if false then return {} end
+if false then
+	return {}
+end
 
 local opts = {
-	snippets = {},
-	signature = {
-		enabled = true,
+	keymap = {
+		preset = "default",
 	},
-	sources = {
-		default = {
-			"lsp",
-			"path",
-			-- "supermaven",
-			"snippets",
-			"buffer",
-		},
-		providers = {},
+	appearance = {
+		nerd_font_variant = "mono",
 	},
 	completion = {
 		menu = {
@@ -31,12 +25,37 @@ local opts = {
 			auto_show_delay_ms = 500,
 		},
 	},
+	sources = {
+		default = {
+			"lsp",
+			"path",
+			-- "supermaven",
+			"snippets",
+			"buffer",
+			"lazydev",
+		},
+		providers = {
+			lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+		},
+	},
+	snippets = {
+		preset = "luasnip",
+	},
+	fuzzy = { implementation = "lua" },
+	signature = {
+		enabled = true,
+	},
 }
 
 return {
 	"saghen/blink.cmp",
-	version = "*",
+	event = "VimEnter",
+	version = "1.*",
+	dependencies = {
+		"L3MON4D3/LuaSnip",
+		"folke/lazydev.nvim",
+	},
 	config = function()
 		require("blink.cmp").setup(opts)
-	end
+	end,
 }
