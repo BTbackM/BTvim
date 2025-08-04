@@ -21,9 +21,7 @@ local opts = {
 	},
 	extensions = {
 		["ui-select"] = {
-			require("telescope.themes").get_dropdown({
-				previewer = false,
-			}),
+			require("telescope.themes").get_dropdown(),
 		},
 	},
 }

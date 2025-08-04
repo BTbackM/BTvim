@@ -49,14 +49,10 @@ local opts = {
 }
 
 local kmaps = {
-	-- LSP keymaps
-	{ "<leader>lr", ":Telescope lsp_references<CR>", desc = "References" },
-	{ "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
-	{ "<leader>ls", ":LspStatus<CR>", desc = "Status" },
+	-- LSP
+	{ "<leader>ls", ":LspStatus<CR>", desc = "LSP Status" },
 
 	-- Git
-	{ "<leader>gb", ":Telescope git_branches<CR>", desc = "Branches" },
-	{ "<leader>gc", ":Telescope git_commits<CR>", desc = "Commits" },
 	{ "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", desc = "Toggle blame" },
 
 	-- Conform
