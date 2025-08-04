@@ -1,4 +1,6 @@
-if false then return {} end
+if false then
+	return {}
+end
 
 local function mason_config(_, opts)
 	require("mason").setup(opts)
@@ -53,10 +55,10 @@ local opts = {
 	},
 	max_concurrent_installers = 8,
 	ensure_installed = {
-    -- LSP
-    "gopls",
-    "lua-language-server",
-    "omnisharp",
+		-- LSP servers
+		"lua-language-server", -- Lua
+		"gopls", -- Go
+		"omnisharp", -- C#
 
 		-- Formatters
 		"gofumpt", -- Go
@@ -70,7 +72,7 @@ local opts = {
 
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		lazy = false,
 		cmd = "Mason",
 		keys = {
