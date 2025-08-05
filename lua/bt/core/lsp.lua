@@ -1,6 +1,45 @@
-vim.lsp.enable({
-	"lua-ls",
-	"gopls",
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			semanticTokens = true,
+		},
+	},
+})
+
+vim.lsp.config("omnisharp", {
+	cmd = {
+		vim.fn.executable("OmniSharp") == 1 and "OmniSharp" or "omnisharp",
+		"-z",
+		"--hostPID",
+		tostring(vim.fn.getpid()),
+		"DotNet:enablePackageRestore=true",
+		"--encoding",
+		"utf-8",
+		"--languageserver",
+	},
+})
+
+vim.lsp.enable("lua-ls")
+vim.lsp.enable("gopls")
+vim.lsp.enable("omnisharp")
+
+vim.diagnostic.config({
+	virtual_text = false,
+	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		source = "if_many",
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "󰋼",
+			[vim.diagnostic.severity.HINT] = "󰛨",
+		},
+	},
 })
 
 local function lsp_status()
@@ -46,14 +85,14 @@ local function lsp_status()
 		if capabilities.documentFormattingProvider then
 			table.insert(features, "formatting")
 		end
-    if capabilities.semanticTokensProvider then
-      table.insert(features, "semantic tokens")
-    end
+		if capabilities.semanticTokensProvider then
+			table.insert(features, "semantic tokens")
+		end
 
 		table.insert(lines, "   • Features:")
-    for _, feature in ipairs(features) do
-      table.insert(lines, "      • " .. feature)
-    end
+		for _, feature in ipairs(features) do
+			table.insert(lines, "      • " .. feature)
+		end
 		if i < #clients then
 			table.insert(lines, "")
 		end
