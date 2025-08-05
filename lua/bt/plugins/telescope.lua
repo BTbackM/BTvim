@@ -1,10 +1,12 @@
-if false then return {} end
+if false then
+	return {}
+end
 
 local opts = {
 	defaults = {
 		file_ignore_patterns = {
 			"node_modules",
-			".git"
+			".git",
 		},
 	},
 	pickers = {
@@ -15,7 +17,12 @@ local opts = {
 				"log",
 				"--date=format:%Y-%m-%d %H:%M:%S",
 			},
-		}
+		},
+	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown(),
+		},
 	},
 }
 
@@ -24,9 +31,45 @@ return {
 	tag = "0.1.8",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
+		},
+		"nvim-telescope/telescope-ui-select.nvim",
+		{
+			"nvim-tree/nvim-web-devicons",
+			enabled = vim.g.have_nerd_font,
+		},
 		"echasnovski/mini.icons",
 	},
 	config = function()
-		require "telescope".setup(opts)
-	end
+		require("telescope").setup(opts)
+
+		-- Load extensions
+		require("telescope").load_extension("fzf")
+		require("telescope").load_extension("ui-select")
+
+		-- Load keymaps
+		local builtin = require("telescope.builtin")
+		-- Find keymaps
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
+		vim.keymap.set("n", "<leader>ff", function()
+			builtin.find_files(require("telescope.themes").get_dropdown({ previewer = false }))
+		end, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fF", builtin.find_files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
+		vim.keymap.set("n", "<leader>fl", builtin.live_grep, { desc = "Live grep" })
+		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Grep" })
+		vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "Recent" })
+
+		-- Git keymaps
+		vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Branches" })
+		vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Commits" })
+		vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
+	end,
 }

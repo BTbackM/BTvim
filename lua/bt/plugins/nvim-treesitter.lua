@@ -1,26 +1,39 @@
-if false then return {} end
+if false then
+	return {}
+end
+
+local opts = {
+	ensure_installed = {
+		"bash",
+		"c",
+		"c_sharp",
+		"go",
+		"lua",
+		"luadoc",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"vim",
+		"vimdoc",
+	},
+	auto_install = true,
+	highlight = {
+		enable = true,
+		disable = {},
+	},
+	indent = {
+		enable = true,
+		disable = {},
+	},
+}
 
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	main = "nvim-treesitter.configs",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"nvim-treesitter/playground",
 	},
-  config = function()
-    require "nvim-treesitter.configs".setup({
-      ensure_installed = {
-        "c_sharp",
-        "go",
-      },
-      highlight = {
-        enable = true,
-        disable = {},
-      },
-      indent = {
-        enable = true,
-        disable = {},
-      },
-    })
-  end
+	opts = opts,
 }

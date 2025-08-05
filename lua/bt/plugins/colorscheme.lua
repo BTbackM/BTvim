@@ -24,16 +24,20 @@ local function get_highlights()
   }
 
 	-- Plugin highlight
+  local nvim_tree_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-tree"
 	local nvim_treesitter_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter"
-	local nvim_tree_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-tree"
 
 	-- LSP highlight
+  local cs_hl = require "bt.colorscheme.gruvbox.hl.lsp.cs"
+  local go_hl = require "bt.colorscheme.gruvbox.hl.lsp.go"
 	local lua_hl = require "bt.colorscheme.gruvbox.hl.lsp.lua"
 
 	hls = concat_highlights(
 		hls,
 		nvim_tree_hl,
 		nvim_treesitter_hl,
+    cs_hl,
+    go_hl,
 		lua_hl
 	)
 

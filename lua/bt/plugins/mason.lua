@@ -1,3 +1,7 @@
+if false then
+	return {}
+end
+
 local function mason_config(_, opts)
 	require("mason").setup(opts)
 
@@ -30,11 +34,31 @@ local function mason_config(_, opts)
 end
 
 local opts = {
+	ui = {
+		border = "rounded",
+		keymaps = {
+			toggle_package_expand = "<CR>",
+			install_package = "i",
+			update_package = "u",
+			check_package_version = "c",
+			update_all_packages = "U",
+			check_outdated_packages = "C",
+			uninstall_package = "X",
+			cancel_installation = "<C-c>",
+			apply_language_filter = "<C-f>",
+		},
+		icons = {
+			package_installed = "",
+			package_pending = "",
+			package_uninstalled = "",
+		},
+	},
+	max_concurrent_installers = 8,
 	ensure_installed = {
 		-- LSP servers
 		"lua-language-server", -- Lua
 		"gopls", -- Go
-    "omnisharp", -- C#
+		"omnisharp", -- C#
 
 		-- Formatters
 		"gofumpt", -- Go
@@ -48,7 +72,7 @@ local opts = {
 
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		lazy = false,
 		cmd = "Mason",
 		keys = {
