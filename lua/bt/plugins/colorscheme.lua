@@ -1,11 +1,13 @@
-if false then return {} end
+if false then
+	return {}
+end
 
-local colors = require "bt.colorscheme.gruvbox.colors"
+local colors = require("bt.colorscheme.gruvbox.colors")
 
 local function concat_highlights(...)
 	local full_hls = {}
 
-	for _, hls in pairs { ... } do
+	for _, hls in pairs({ ... }) do
 		for hl_group, hl_value in pairs(hls) do
 			full_hls[hl_group] = hl_value
 		end
@@ -16,30 +18,23 @@ end
 
 local function get_highlights()
 	local hls = {
-    ["CursorLineNr"] = {
-      fg = colors["custom"].blue,
-      bold = true,
-      italic = false,
-    },
-  }
+		["CursorLineNr"] = {
+			fg = colors["custom"].blue,
+			bold = true,
+			italic = false,
+		},
+	}
 
 	-- Plugin highlight
-  local nvim_tree_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-tree"
-	local nvim_treesitter_hl = require "bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter"
+	local nvim_tree_hl = require("bt.colorscheme.gruvbox.hl.plugins.nvim-tree")
+	local nvim_treesitter_hl = require("bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter")
 
 	-- LSP highlight
-  local cs_hl = require "bt.colorscheme.gruvbox.hl.lsp.cs"
-  local go_hl = require "bt.colorscheme.gruvbox.hl.lsp.go"
-	local lua_hl = require "bt.colorscheme.gruvbox.hl.lsp.lua"
+	local cs_hl = require("bt.colorscheme.gruvbox.hl.lsp.cs")
+	local go_hl = require("bt.colorscheme.gruvbox.hl.lsp.go")
+	local lua_hl = require("bt.colorscheme.gruvbox.hl.lsp.lua")
 
-	hls = concat_highlights(
-		hls,
-		nvim_tree_hl,
-		nvim_treesitter_hl,
-    cs_hl,
-    go_hl,
-		lua_hl
-	)
+	hls = concat_highlights(hls, nvim_tree_hl, nvim_treesitter_hl, cs_hl, go_hl, lua_hl)
 
 	return hls
 end
@@ -50,16 +45,16 @@ return {
 		enabled = true,
 		priority = 1000,
 		config = function()
-			require "gruvbox".setup({
+			require("gruvbox").setup({
 				bold = true,
 				contrast = "soft",
 				terminal_colors = true,
 				transparent_mode = false,
-				overrides = get_highlights()
+				overrides = get_highlights(),
 			})
 
 			vim.o.background = "light"
-			vim.cmd('colorscheme gruvbox')
-		end
-	}
+			vim.cmd("colorscheme gruvbox")
+		end,
+	},
 }
