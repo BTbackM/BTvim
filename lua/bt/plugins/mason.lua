@@ -56,9 +56,11 @@ local opts = {
 	max_concurrent_installers = 8,
 	ensure_installed = {
 		-- LSP servers
+		-- "csharp_ls", -- C#
 		"lua-language-server", -- Lua
 		"gopls", -- Go
-		"omnisharp", -- C#
+		-- "omnisharp", -- C#
+		"roslyn", -- C#
 
 		-- Formatters
 		"gofumpt", -- Go
@@ -67,6 +69,10 @@ local opts = {
 
 		-- Linters
 		"luacheck", -- Lua
+	},
+	registries = {
+		"github:mason-org/mason-registry",
+		"github:Crashdummyy/mason-registry",
 	},
 }
 
@@ -81,5 +87,9 @@ return {
 		build = ":MasonUpdate",
 		opts = opts,
 		config = mason_config,
+	},
+	{
+		"seblyng/roslyn.nvim",
+		opts = {},
 	},
 }

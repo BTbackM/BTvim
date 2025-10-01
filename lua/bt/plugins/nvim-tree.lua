@@ -1,7 +1,9 @@
-if false then return {} end
+if false then
+	return {}
+end
 
 local function nvim_tree_config(_, opts)
-  require "nvim-tree".setup(opts)
+	require("nvim-tree").setup(opts)
 end
 
 local opts = {
@@ -38,7 +40,7 @@ local opts = {
 	},
 	view = {
 		width = 25,
-		side = "left"
+		side = "left",
 	},
 	update_focused_file = {
 		enable = true,
@@ -47,14 +49,14 @@ local opts = {
 }
 
 return {
-  {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = opts,
-    config = nvim_tree_config,
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = opts,
+		config = nvim_tree_config,
+	},
 }
