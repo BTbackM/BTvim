@@ -20,11 +20,14 @@ vim.lsp.config("gopls", {
 -- })
 
 vim.lsp.enable({
+  "astro",
 	-- "csharp_ls",
+  "gopls",
 	"lua-ls",
-	"gopls",
+  "kotlin_language_server",
 	-- "omnisharp",
 	"roslyn",
+  "ts_ls",
 })
 
 vim.diagnostic.config({
