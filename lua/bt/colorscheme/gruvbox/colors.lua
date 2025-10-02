@@ -74,7 +74,8 @@ return {
 		red = "#9D0006",
 		yellow = "#FFA400",
     dark_yellow = "#B57614",
-		-- purple = "#46007A",
-		purple = "#35063E",
+		dark_purple = "#B6B5D8",
+		purple = "#3E2F84",
+    blue_gray = "#4A6462",
 	},
 }

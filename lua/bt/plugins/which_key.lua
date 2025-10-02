@@ -57,6 +57,11 @@ local kmaps = {
 
 	-- Conform
 	{ "<leader>cf", ":lua require('conform').format({ async = true })<CR>", desc = "Format" },
+
+  -- Rest
+  -- { "<leader>rc", ":Rest cookies<CR>", desc = "Rest cookies" },
+  -- { "<leader>rr", ":Rest run<CR>", desc = "Rest run" },
+  -- { "<leader>rl", ":Rest last<CR>", desc = "Rest last request" },
 }
 
 return {

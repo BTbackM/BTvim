@@ -6,22 +6,29 @@ vim.lsp.config("gopls", {
 	},
 })
 
-vim.lsp.config("omnisharp", {
-	cmd = {
-		vim.fn.executable("OmniSharp") == 1 and "OmniSharp" or "omnisharp",
-		"-z",
-		"--hostPID",
-		tostring(vim.fn.getpid()),
-		"DotNet:enablePackageRestore=true",
-		"--encoding",
-		"utf-8",
-		"--languageserver",
-	},
-})
+-- vim.lsp.config("omnisharp", {
+-- 	cmd = {
+-- 		vim.fn.executable("OmniSharp") == 1 and "OmniSharp" or "omnisharp",
+-- 		"-z",
+-- 		"--hostPID",
+-- 		tostring(vim.fn.getpid()),
+-- 		"DotNet:enablePackageRestore=true",
+-- 		"--encoding",
+-- 		"utf-8",
+-- 		"--languageserver",
+-- 	},
+-- })
 
-vim.lsp.enable("lua-ls")
-vim.lsp.enable("gopls")
-vim.lsp.enable("omnisharp")
+vim.lsp.enable({
+  "astro",
+	-- "csharp_ls",
+  "gopls",
+	"lua-ls",
+  "kotlin_language_server",
+	-- "omnisharp",
+	"roslyn",
+  "ts_ls",
+})
 
 vim.diagnostic.config({
 	virtual_text = false,

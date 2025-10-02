@@ -95,6 +95,7 @@ return {
 			lua_ls = require("bt.lsp.lua-ls"),
 			gopls = require("bt.lsp.gopls"),
 			omnisharp = require("bt.lsp.omnisharp"),
+			kotlin_lsp = require("bt.lsp.kotlin-ls"),
 		}
 
 		local ensure_installed = vim.tbl_keys(servers or {})
