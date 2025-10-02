@@ -4,17 +4,22 @@ end
 
 local opts = {
 	ensure_installed = {
+    "astro",
 		"bash",
 		"c",
 		"c_sharp",
 		"go",
+    "http",
+    "kotlin",
 		"lua",
 		"luadoc",
 		"markdown",
 		"markdown_inline",
 		"python",
+    "sql",
 		"vim",
 		"vimdoc",
+    "yaml",
 	},
 	auto_install = true,
 	highlight = {
