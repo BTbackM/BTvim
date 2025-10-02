@@ -1,4 +1,4 @@
-local colors = require "bt.colorscheme.gruvbox.colors"
+local colors = require("bt.colorscheme.gruvbox.colors")
 
 return {
 	-- Functions
@@ -49,19 +49,40 @@ return {
 	},
 	["@boolean"] = { link = "@constant" },
 
-  -- Types
-  ["@type"] = {
-    fg = colors["custom"].dark_yellow,
-    bold = false,
-    italic = false,
-  },
-  ["@type.go"] = { link = "@type" },
-  ["@type.builtin.go"] = { link = "@type" },
+	-- Types
+	["@type"] = {
+		fg = colors["custom"].dark_yellow,
+		bold = false,
+		italic = false,
+	},
+	["@type.go"] = { link = "@type" },
+	["@type.builtin.go"] = { link = "@type" },
 
-  -- Link
-  ["@markup.link.label.markdown_inline"] = {
-    fg = colors["custom"].orange,
-    bold = true,
-    italic = false,
-  },
+	-- Link
+	["@markup.link.label.markdown_inline"] = {
+		fg = colors["custom"].orange,
+		bold = true,
+		italic = false,
+	},
+
+	-- YAML
+	["@property.yaml"] = {
+		fg = colors["custom"].blue,
+		bold = true,
+		italic = false,
+	},
+
+	-- SQL
+	["@type.builtin.sql"] = {
+		fg = colors["custom"].red,
+		bold = true,
+		italic = false,
+	},
+	["@number.sql"] = {
+		fg = colors["custom"].purple,
+		bold = false,
+		italic = false,
+	},
+	["@number.float.sql"] = { link = "number.sql" },
+	["@type.sql"] = {},
 }
