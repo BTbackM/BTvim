@@ -5,6 +5,10 @@ end
 local opts = {
 	keymap = {
 		preset = "default",
+		["<CR>"] = { "accept", "fallback" },
+		["<Tab>"] = { "select_next", "fallback" },
+		["<S-Tab>"] = { "select_prev", "fallback" },
+		["<C-e>"] = { "hide", "fallback" },
 	},
 	appearance = {
 		nerd_font_variant = "mono",
@@ -56,6 +60,10 @@ return {
 		"folke/lazydev.nvim",
 	},
 	config = function()
+		vim.lsp.config("*", {
+			capabilities = require("blink.cmp").get_lsp_capabilities(),
+		})
+
 		require("blink.cmp").setup(opts)
 	end,
 }
