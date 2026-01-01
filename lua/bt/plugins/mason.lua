@@ -68,6 +68,7 @@ local opts = {
 
 		-- Formatters
 		"biome", -- TS
+		"csharpier", -- C#
 		"gofumpt", -- Go
 		"goimports", -- Go
 		"ktfmt", -- Kotlin

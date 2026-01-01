@@ -3,9 +3,12 @@ if false then
 end
 
 local opts = {
+	async = true,
 	notify_on_error = false,
 	formatters_by_ft = {
 		astro = { "biome" },
+		cs = { "csharpier" },
+		csproj = { "csharpier" },
 		go = { "gofumpt", "goimports" },
 		javascript = { "biome" },
 		javascriptreact = { "biome" },
