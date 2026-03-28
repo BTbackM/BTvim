@@ -1,3 +1,5 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 vim.lsp.config("gopls", {
 	settings = {
 		gopls = {
@@ -6,28 +8,35 @@ vim.lsp.config("gopls", {
 	},
 })
 
--- vim.lsp.config("omnisharp", {
--- 	cmd = {
--- 		vim.fn.executable("OmniSharp") == 1 and "OmniSharp" or "omnisharp",
--- 		"-z",
--- 		"--hostPID",
--- 		tostring(vim.fn.getpid()),
--- 		"DotNet:enablePackageRestore=true",
--- 		"--encoding",
--- 		"utf-8",
--- 		"--languageserver",
--- 	},
--- })
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "standard",
+			},
+		},
+	},
+})
+
+vim.lsp.config("html", {
+	filetypes = { "html", "cshtml" },
+	capabilities = capabilities,
+})
 
 vim.lsp.enable({
-  "astro",
+	"angularls",
+	"astro",
+	"basedpyright",
+	"cssls",
 	-- "csharp_ls",
-  "gopls",
+	"gopls",
+	"html",
+	"kotlin_language_server",
 	"lua-ls",
-  "kotlin_language_server",
 	-- "omnisharp",
 	"roslyn",
-  "ts_ls",
+	"ruff",
+	"ts_ls",
 })
 
 vim.diagnostic.config({
