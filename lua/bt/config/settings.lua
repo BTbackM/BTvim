@@ -18,6 +18,7 @@ function M.load()
 			eol = "↲",
 			trail = "·",
 			nbsp = "␣",
+			lead = "·",
 		},
 		number = true,
 		relativenumber = true,

@@ -56,11 +56,15 @@ local opts = {
 	max_concurrent_installers = 8,
 	ensure_installed = {
 		-- LSP servers
+		"angular-language-server", -- Angular
 		"astro-language-server", -- Astro
+    "basedpyright", -- Python
+		"css-lsp", -- CSS
 		-- "csharp_ls", -- C#
-		"lua-language-server", -- Lua
 		"gopls", -- Go
+		"html-lsp", -- HTML
 		"kotlin-language-server", -- Kotlin
+		"lua-language-server", -- Lua
 		-- "omnisharp", -- C#
 		"roslyn", -- C#
 		"typescript-language-server", -- TS
@@ -68,9 +72,11 @@ local opts = {
 
 		-- Formatters
 		"biome", -- TS
+		"csharpier", -- C#
 		"gofumpt", -- Go
 		"goimports", -- Go
 		"ktfmt", -- Kotlin
+    "ruff", -- Python
 		"sleek", -- SQL
 		"stylua", -- Lua
 

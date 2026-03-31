@@ -8,17 +8,12 @@ return {
 		italic = false,
 	},
 	["@lsp.type.recordClass.cs"] = { link = "@lsp.type.struct.cs" },
-	["@lsp.typemod.class.static.cs"] = {
-		fg = colors["custom"].orange,
-		bold = false,
-		italic = false,
-	},
-  ["@lsp.type.class.cs"] = { link = "@lsp.type.struct.cs" },
+	["@lsp.type.class.cs"] = { link = "@lsp.type.struct.cs" },
 
 	-- Function
 	["@lsp.type.method.cs"] = { link = "@function" },
 	["@lsp.type.extensionMethodName.cs"] = { link = "@function" },
-  ["@lsp.type.extensionMethod.cs"] = { link = "@function" },
+	["@lsp.type.extensionMethod.cs"] = { link = "@function" },
 
 	-- General
 	["@lsp.type.number.cs"] = {
@@ -29,6 +24,11 @@ return {
 	["@lsp.type.identifier.cs"] = { link = "@function" },
 	["@lsp.type.parameter.cs"] = {
 		fg = colors["light"].aqua,
+		bold = false,
+		italic = false,
+	},
+	["@lsp.typemod.class.static.cs"] = {
+		fg = colors["custom"].red,
 		bold = false,
 		italic = false,
 	},

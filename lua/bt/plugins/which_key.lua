@@ -56,12 +56,18 @@ local kmaps = {
 	{ "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", desc = "Toggle blame" },
 
 	-- Conform
-	{ "<leader>cf", ":lua require('conform').format({ async = true })<CR>", desc = "Format" },
+	{
+		"<leader>cf",
+		function()
+			require("conform").format({ lsp_fallback = true })
+		end,
+		desc = "Conform format",
+	},
 
-  -- Rest
-  -- { "<leader>rc", ":Rest cookies<CR>", desc = "Rest cookies" },
-  -- { "<leader>rr", ":Rest run<CR>", desc = "Rest run" },
-  -- { "<leader>rl", ":Rest last<CR>", desc = "Rest last request" },
+	-- Rest
+	-- { "<leader>rc", ":Rest cookies<CR>", desc = "Rest cookies" },
+	-- { "<leader>rr", ":Rest run<CR>", desc = "Rest run" },
+	-- { "<leader>rl", ":Rest last<CR>", desc = "Rest last request" },
 }
 
 return {
