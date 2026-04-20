@@ -7,4 +7,9 @@ return {
     bold = true,
     italic = false,
   },
+  ["@lsp.type.method.python"] = {
+    fg = colors["custom"].blue,
+    bold = true,
+    italic = false,
+  },
 }
