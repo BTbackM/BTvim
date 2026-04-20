@@ -58,7 +58,7 @@ local opts = {
 		-- LSP servers
 		"angular-language-server", -- Angular
 		"astro-language-server", -- Astro
-    "basedpyright", -- Python
+		"basedpyright", -- Python
 		"css-lsp", -- CSS
 		-- "csharp_ls", -- C#
 		"gopls", -- Go
@@ -76,12 +76,9 @@ local opts = {
 		"gofumpt", -- Go
 		"goimports", -- Go
 		"ktfmt", -- Kotlin
-    "ruff", -- Python
+		"ruff", -- Python
 		"sleek", -- SQL
 		"stylua", -- Lua
-
-		-- Linters
-		"luacheck", -- Lua
 	},
 	registries = {
 		"github:mason-org/mason-registry",
