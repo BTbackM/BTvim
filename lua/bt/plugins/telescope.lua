@@ -5,6 +5,7 @@ end
 local opts = {
 	defaults = {
 		file_ignore_patterns = {
+			"dist",
 			"node_modules",
 			".git",
 		},
@@ -17,6 +18,9 @@ local opts = {
 				"log",
 				"--date=format:%Y-%m-%d %H:%M:%S",
 			},
+		},
+		buffers = {
+			previewer = false,
 		},
 	},
 	extensions = {
