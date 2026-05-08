@@ -44,6 +44,7 @@ local opts = {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>c", group = "Conform" },
+			{ "<leader>R", group = "Request" },
 		},
 	},
 }
