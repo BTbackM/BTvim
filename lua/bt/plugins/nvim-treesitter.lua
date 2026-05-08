@@ -17,6 +17,7 @@ local opts = {
 		"markdown",
 		"markdown_inline",
 		"python",
+    "rust",
 		"sql",
 		"typescript",
 		"vim",

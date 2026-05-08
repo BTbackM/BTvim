@@ -67,6 +67,7 @@ local opts = {
 		"lua-language-server", -- Lua
 		-- "omnisharp", -- C#
 		"roslyn", -- C#
+		"rust-analyzer", -- Rust
 		"typescript-language-server", -- TS
 		"vtsls", -- TS
 
