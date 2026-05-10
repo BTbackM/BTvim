@@ -2,7 +2,15 @@ if false then
 	return {}
 end
 
-local opts = {}
+local opts = {
+	completion = { crates = { enabled = true } },
+	lsp = {
+		enabled = true,
+		actions = true,
+		completion = true,
+		hover = true,
+	},
+}
 
 return {
 	{
@@ -14,6 +22,7 @@ return {
 		"saecki/crates.nvim",
 		tag = "stable",
 		event = { "BufRead Cargo.toml" },
+		opts = opts,
 		config = function()
 			require("crates").setup()
 		end,
