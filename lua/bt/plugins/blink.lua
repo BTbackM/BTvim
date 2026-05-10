@@ -3,6 +3,9 @@ if false then
 end
 
 local opts = {
+	enabled = function()
+		return vim.bo.filetype ~= "DressingInput"
+	end,
 	keymap = {
 		preset = "default",
 		["<CR>"] = { "accept", "fallback" },
@@ -31,15 +34,18 @@ local opts = {
 	},
 	sources = {
 		default = {
+			"lazydev",
 			"lsp",
 			"path",
 			-- "supermaven",
 			"snippets",
 			"buffer",
-			"lazydev",
 		},
 		providers = {
-			lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+			lazydev = {
+				module = "lazydev.integrations.blink",
+				score_offset = 100,
+			},
 		},
 	},
 	snippets = {

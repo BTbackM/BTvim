@@ -5,6 +5,7 @@ end
 return {
 	{
 		"rest-nvim/rest.nvim",
+		enabled = true,
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter",
@@ -17,6 +18,7 @@ return {
 	},
 	{
 		"mistweaverco/kulala.nvim",
+		enabled = true,
 		keys = {
 			{ "<leader>rs", desc = "Send request" },
 			{ "<leader>ra", desc = "Send all requests" },
@@ -24,7 +26,7 @@ return {
 		ft = { "http", "rest" },
 		opts = {
 			global_keymaps = true,
-			global_keymaps_prefix = "<leader>r",
+			global_keymaps_prefix = "<leader>R",
 			kulala_keymaps_prefix = "",
 		},
 	},

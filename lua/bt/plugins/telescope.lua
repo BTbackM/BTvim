@@ -5,6 +5,7 @@ end
 local opts = {
 	defaults = {
 		file_ignore_patterns = {
+			"dist",
 			"node_modules",
 			".git",
 		},
@@ -18,6 +19,9 @@ local opts = {
 				"--date=format:%Y-%m-%d %H:%M:%S",
 			},
 		},
+		buffers = {
+			previewer = false,
+		},
 	},
 	extensions = {
 		["ui-select"] = {
@@ -28,7 +32,7 @@ local opts = {
 
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.8",
+	version = "*",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{

@@ -44,6 +44,7 @@ local opts = {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>c", group = "Conform" },
+			{ "<leader>R", group = "Request" },
 		},
 	},
 }
@@ -51,6 +52,7 @@ local opts = {
 local kmaps = {
 	-- LSP
 	{ "<leader>ls", ":LspStatus<CR>", desc = "LSP Status" },
+	{ "<leader>li", ":LspClientInfo<CR>", desc = "LSP Client Info" },
 
 	-- Git
 	{ "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", desc = "Toggle blame" },
