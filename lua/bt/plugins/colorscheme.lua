@@ -42,6 +42,7 @@ local function get_highlights()
 	local kt_hl = require("bt.colorscheme.gruvbox.hl.lsp.kt")
 	local html_hl = require("bt.colorscheme.gruvbox.hl.lsp.html")
 	local http_hl = require("bt.colorscheme.gruvbox.hl.lsp.http")
+	local hypr_hl = require("bt.colorscheme.gruvbox.hl.lsp.hypr")
 	local lua_hl = require("bt.colorscheme.gruvbox.hl.lsp.lua")
 	local py_hl = require("bt.colorscheme.gruvbox.hl.lsp.py")
 	local razor_hl = require("bt.colorscheme.gruvbox.hl.lsp.razor")
@@ -66,6 +67,7 @@ local function get_highlights()
 		kt_hl,
 		html_hl,
 		http_hl,
+		hypr_hl,
 		lua_hl,
 		py_hl,
 		razor_hl,
