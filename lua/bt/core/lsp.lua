@@ -8,10 +8,8 @@ vim.lsp.config("gopls", {
 			},
 		},
 	}),
-	settings = {
-		gopls = {
-			semanticTokens = true,
-		},
+	init_options = {
+		semanticTokens = true,
 	},
 })
 
@@ -38,7 +36,8 @@ vim.lsp.enable({
 	-- "csharp_ls",
 	"gopls",
 	"html",
-	"kotlin_language_server",
+	-- "kotlin_language_server",
+	"kotlin_lsp",
 	"lua-ls",
 	-- "omnisharp",
 	"roslyn",
