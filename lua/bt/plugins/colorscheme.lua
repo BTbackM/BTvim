@@ -46,6 +46,7 @@ local function get_highlights()
 	local py_hl = require("bt.colorscheme.gruvbox.hl.lsp.py")
 	local razor_hl = require("bt.colorscheme.gruvbox.hl.lsp.razor")
 	local rust_hl = require("bt.colorscheme.gruvbox.hl.lsp.rust")
+	local tmux_hl = require("bt.colorscheme.gruvbox.hl.lsp.tmux")
 	local toml_hl = require("bt.colorscheme.gruvbox.hl.lsp.toml")
 	local ts_hl = require("bt.colorscheme.gruvbox.hl.lsp.ts")
 
@@ -69,6 +70,7 @@ local function get_highlights()
 		py_hl,
 		razor_hl,
 		rust_hl,
+		tmux_hl,
 		toml_hl,
 		ts_hl
 	)

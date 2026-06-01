@@ -63,7 +63,7 @@ local opts = {
 		-- "csharp_ls", -- C#
 		"gopls", -- Go
 		"html-lsp", -- HTML
-		"kotlin-language-server", -- Kotlin
+		-- "kotlin-language-server", -- Kotlin
 		"lua-language-server", -- Lua
 		-- "omnisharp", -- C#
 		"roslyn", -- C#
@@ -80,6 +80,9 @@ local opts = {
 		"ruff", -- Python
 		"sleek", -- SQL
 		"stylua", -- Lua
+
+		-- Linters
+		"ktlint", -- Kotlin
 	},
 	registries = {
 		"github:mason-org/mason-registry",
