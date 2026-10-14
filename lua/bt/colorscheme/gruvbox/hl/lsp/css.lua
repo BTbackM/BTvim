@@ -58,11 +58,6 @@ return {
 		bold = false,
 		italic = false,
 	},
-	["cssBraces"] = {
-		fg = colors["custom"].red,
-		bold = false,
-		italic = false,
-	},
 	["cssValueLength"] = {
 		fg = colors["custom"].purple,
 		bold = false,
@@ -74,8 +69,53 @@ return {
 		italic = false,
 	},
 	["cssUnitDecorators"] = {
-		fg = colors["custom"].red,
+		fg = colors["custom"].black,
 		bold = false,
 		italic = false,
+	},
+	["cssCustomProp"] = {
+		fg = colors["custom"].blue,
+		bold = false,
+		italic = false,
+	},
+	["cssMediaAttr"] = {
+		fg = colors["custom"].purple,
+		bold = false,
+		italic = false,
+	},
+	["cssMediaProp"] = {
+		fg = colors["custom"].red,
+		bold = 0,
+		italic = 0,
+	},
+	["cssPseudoClassId"] = {
+		fg = colors["custom"].red,
+		bold = true,
+		italic = false,
+	},
+	["cssBraces"] = {
+		fg = colors["custom"].black,
+		bold = false,
+		italic = false,
+	},
+	["cssAtRule"] = {
+		fg = colors["light"].aqua,
+		bold = true,
+		italic = false,
+	},
+	["cssFunctionName"] = {
+		fg = colors["custom"].blue,
+		bold = true,
+		italic = false,
+	},
+	["cssUIProp"] = {
+		fg = colors["custom"].blue,
+		bold = false,
+		italic = false,
+	},
+	["cssPageProp"] = {
+		fg = colors["custom"].blue,
+		bold = false,
+		italic = true,
 	},
 }

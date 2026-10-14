@@ -7,12 +7,12 @@ return {
 		italic = false,
 	},
 	["ObsidianDone"] = {
-		fg = colors["custom"].blue,
+		fg = colors["custom"].red,
 		bold = true,
 		italic = false,
 	},
 	["ObsidianTilde"] = {
-		fg = colors["custom"].red,
+		fg = colors["custom"].blue,
 		bold = true,
 		italic = false,
 	},

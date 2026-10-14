@@ -8,7 +8,7 @@ return {
 	},
 	["@tag.attribute.html"] = {
 		fg = colors["custom"].blue,
-		bold = true,
+		bold = false,
 		italic = false,
 	},
 	["@string.special.url.html"] = {
@@ -22,4 +22,16 @@ return {
 		bold = true,
 		italic = false,
 	},
+	["htmlEndTag"] = {
+		fg = colors["custom"].black,
+		bold = false,
+		italic = false,
+	},
+	["htmlTag"] = {
+		fg = colors["custom"].black,
+		bold = false,
+		italic = false,
+	},
+	["htmlTagName"] = { link = "@tag.html" },
+	["htmlArg"] = { link = "@tag.attribute.html" },
 }
