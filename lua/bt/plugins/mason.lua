@@ -64,10 +64,12 @@ local opts = {
 		"gopls", -- Go
 		"html-lsp", -- HTML
 		-- "kotlin-language-server", -- Kotlin
+		"kotlin-lsp", -- Kotlin
 		"lua-language-server", -- Lua
 		-- "omnisharp", -- C#
 		"roslyn", -- C#
 		"rust-analyzer", -- Rust
+		"tailwindcss-language-server", -- CSS
 		"typescript-language-server", -- TS
 		"vtsls", -- TS
 

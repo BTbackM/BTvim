@@ -10,9 +10,12 @@ local opts = {
 			path = "~/Documents/BT",
 		},
 	},
-  daily_notes = {
-    folder = "Daily",
-  },
+	daily_notes = {
+		folder = "Daily",
+	},
+	picker = {
+		name = "telescope.nvim",
+	},
 	ui = {
 		checkboxes = {
 			[">"] = { char = "󰧚", hl_group = "ObsidianRightArrow" },
