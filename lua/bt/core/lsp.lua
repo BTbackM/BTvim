@@ -8,10 +8,8 @@ vim.lsp.config("gopls", {
 			},
 		},
 	}),
-	settings = {
-		gopls = {
-			semanticTokens = true,
-		},
+	init_options = {
+		semanticTokens = true,
 	},
 })
 
@@ -30,6 +28,14 @@ vim.lsp.config("html", {
 	capabilities = capabilities,
 })
 
+vim.lsp.config("cssls", {
+	settings = {
+		css = { lint = { unknownAtRules = "ignore" } },
+		scss = { lint = { unknownAtRules = "ignore" } },
+		less = { lint = { unknownAtRules = "ignore" } },
+	},
+})
+
 vim.lsp.enable({
 	"angularls",
 	"astro",
@@ -38,11 +44,13 @@ vim.lsp.enable({
 	-- "csharp_ls",
 	"gopls",
 	"html",
-	"kotlin_language_server",
+	-- "kotlin_language_server",
+	"kotlin_lsp",
 	"lua-ls",
 	-- "omnisharp",
 	"roslyn",
 	"ruff",
+	"tailwindcss",
 	"ts_ls",
 })
 
@@ -128,6 +136,7 @@ local function lsp_status()
 		table.insert(lines, string.format("%d. %s (ID: %d)", i, client.name, client.id))
 		table.insert(lines, "   • Root: " .. (client.config.root_dir or "(none)"))
 		table.insert(lines, "   • Filetypes: " .. table.concat(client.config.filetypes or {}, ", "))
+		table.insert(lines, "   • Cmd: " .. (vim.inspect(client.config.cmd) or "(none)"))
 
 		-- Capabilities
 		local lsp_capabilities = client.server_capabilities

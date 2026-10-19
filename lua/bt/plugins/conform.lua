@@ -13,12 +13,16 @@ local opts = {
 		go = { "gofumpt", "goimports" },
 		javascript = { "biome" },
 		javascriptreact = { "biome" },
+		json = { "jq" },
+		jsonc = { "jq" },
 		kotlin = { "ktfmt" },
 		lua = { "stylua" },
 		py = { "ruff_format" },
 		sql = { "sleek" },
+		toml = { "yq" },
 		typescript = { "biome" },
 		typescriptreact = { "biome" },
+		yaml = { "yamlfmt" },
 	},
 	formatters = {
 		sleek = {

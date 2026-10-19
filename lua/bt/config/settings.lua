@@ -3,6 +3,7 @@ local M = {}
 function M.load()
 	local options = {
 		clipboard = "unnamedplus",
+		conceallevel = 1,
 		confirm = true,
 		cursorline = true,
 		expandtab = true,

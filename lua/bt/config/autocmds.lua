@@ -51,3 +51,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.bo.expandtab = true
 	end,
 })
+
+local languages = {
+	"go",
+	"kotlin",
+}
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = languages,
+	callback = function()
+		vim.treesitter.start()
+	end,
+})

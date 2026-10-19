@@ -1,6 +1,11 @@
 local colors = require("bt.colorscheme.gruvbox.colors")
 
 return {
+	["@type.rust"] = {
+		fg = colors["custom"].dark_yellow,
+		bold = true,
+		italic = false,
+	},
 	["rustFoldBraces"] = {
 		fg = colors["custom"].black,
 		bold = false,
@@ -31,6 +36,18 @@ return {
 	},
 	["rustMacro"] = {
 		fg = colors["light"].aqua,
+		bold = false,
+		italic = false,
+	},
+	["@lsp.type.struct.rust"] = { link = "@type.rust" },
+	["@lsp.type.interface.rust"] = { link = "@type.rust" },
+	["@lsp.type.number.rust"] = {
+		fg = colors["custom"].purple,
+		bold = false,
+		italic = false,
+	},
+	["rustTrait"] = {
+		fg = colors["custom"].purple,
 		bold = false,
 		italic = false,
 	},

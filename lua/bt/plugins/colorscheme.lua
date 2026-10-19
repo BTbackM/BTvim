@@ -42,10 +42,13 @@ local function get_highlights()
 	local kt_hl = require("bt.colorscheme.gruvbox.hl.lsp.kt")
 	local html_hl = require("bt.colorscheme.gruvbox.hl.lsp.html")
 	local http_hl = require("bt.colorscheme.gruvbox.hl.lsp.http")
+	local hypr_hl = require("bt.colorscheme.gruvbox.hl.lsp.hypr")
 	local lua_hl = require("bt.colorscheme.gruvbox.hl.lsp.lua")
+	local obsidian_hl = require("bt.colorscheme.gruvbox.hl.lsp.obsidian")
 	local py_hl = require("bt.colorscheme.gruvbox.hl.lsp.py")
 	local razor_hl = require("bt.colorscheme.gruvbox.hl.lsp.razor")
 	local rust_hl = require("bt.colorscheme.gruvbox.hl.lsp.rust")
+	local tmux_hl = require("bt.colorscheme.gruvbox.hl.lsp.tmux")
 	local toml_hl = require("bt.colorscheme.gruvbox.hl.lsp.toml")
 	local ts_hl = require("bt.colorscheme.gruvbox.hl.lsp.ts")
 
@@ -65,10 +68,13 @@ local function get_highlights()
 		kt_hl,
 		html_hl,
 		http_hl,
+		hypr_hl,
 		lua_hl,
+		obsidian_hl,
 		py_hl,
 		razor_hl,
 		rust_hl,
+		tmux_hl,
 		toml_hl,
 		ts_hl
 	)
@@ -85,6 +91,8 @@ return {
 			"mistweaverco/kulala.nvim",
 		},
 		config = function()
+			vim.o.background = "light"
+
 			require("gruvbox").setup({
 				bold = true,
 				contrast = "soft",
@@ -93,8 +101,14 @@ return {
 				overrides = get_highlights(),
 			})
 
-			vim.o.background = "light"
-			vim.cmd("colorscheme gruvbox")
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				pattern = "gruvbox",
+				callback = function()
+					for name, val in pairs(get_highlights()) do
+						vim.api.nvim_set_hl(0, name, val)
+					end
+				end,
+			})
 		end,
 	},
 }

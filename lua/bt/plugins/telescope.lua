@@ -5,6 +5,13 @@ end
 local opts = {
 	defaults = {
 		file_ignore_patterns = {
+			"android",
+			"ios",
+			"linux",
+			"macos",
+			"windows",
+			"web",
+			"build",
 			"dist",
 			"node_modules",
 			".git",
