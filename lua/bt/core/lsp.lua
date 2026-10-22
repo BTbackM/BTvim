@@ -1,5 +1,15 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT" },
+			completion = { callSnippet = "Replace" },
+			workspace = { checkThirdParty = false },
+		},
+	},
+})
+
 vim.lsp.config("gopls", {
 	capabilities = vim.tbl_deep_extend("force", capabilities, {
 		workspace = {
@@ -46,7 +56,7 @@ vim.lsp.enable({
 	"html",
 	-- "kotlin_language_server",
 	"kotlin_lsp",
-	"lua-ls",
+	"lua_ls",
 	-- "omnisharp",
 	"roslyn",
 	"ruff",
@@ -107,15 +117,15 @@ local function create_floating_window(lines)
 	})
 
 	-- Window styling
-	vim.api.nvim_win_set_option(win, "winhl", "Normal:NormalFloat")
+	vim.wo[win].winhl = "Normal:NormalFloat"
 
 	-- Keymaps to close window
 	vim.keymap.set("n", "<Esc>", "<cmd>q!<cr>", { buffer = buf })
 	vim.keymap.set("n", "q", "<cmd>q!<cr>", { buffer = buf })
 
 	-- Make buffer non-editable
-	vim.api.nvim_buf_set_option(buf, "modifiable", false)
-	vim.api.nvim_buf_set_option(buf, "filetype", "markdown") -- For better syntax
+	vim.bo[buf].modifiable = false
+	vim.bo[buf].filetype = "markdown"
 end
 
 local function lsp_status()
@@ -133,13 +143,22 @@ local function lsp_status()
 
 	-- Client information
 	for i, client in ipairs(clients) do
+		---@type vim.lsp.Config
+		local config = vim.lsp.config[client.name] or {}
+		local filetypes = config.filetypes or {}
+
 		table.insert(lines, string.format("%d. %s (ID: %d)", i, client.name, client.id))
 		table.insert(lines, "   • Root: " .. (client.config.root_dir or "(none)"))
-		table.insert(lines, "   • Filetypes: " .. table.concat(client.config.filetypes or {}, ", "))
+		table.insert(lines, "   • Filetypes: " .. table.concat(filetypes, ", "))
 		table.insert(lines, "   • Cmd: " .. (vim.inspect(client.config.cmd) or "(none)"))
 
 		-- Capabilities
 		local lsp_capabilities = client.server_capabilities
+		if not lsp_capabilities then
+			table.insert(lines, "   • Server capabilities: none")
+			goto continue
+		end
+
 		local features = {}
 		if lsp_capabilities.completionProvider then
 			table.insert(features, "completion")
@@ -170,9 +189,12 @@ local function lsp_status()
 		for _, feature in ipairs(features) do
 			table.insert(lines, "      • " .. feature)
 		end
+
 		if i < #clients then
 			table.insert(lines, "")
 		end
+
+		::continue::
 	end
 
 	create_floating_window(lines)
@@ -205,7 +227,7 @@ local function lsp_client_info()
 
 	local buf = vim.api.nvim_create_buf(false, true)
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-	vim.api.nvim_buf_set_option(buf, "filetype", "lua")
+	vim.bo[buf].filetype = "lua"
 	vim.api.nvim_open_win(buf, true, {
 		relative = "editor",
 		width = math.floor(vim.o.columns * 0.8),
