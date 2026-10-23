@@ -1,4 +1,4 @@
-local colors = require "bt.colorscheme.gruvbox.colors"
+local colors = require("bt.colorscheme.gruvbox.colors")
 
 return {
 	["@lsp.type.method.lua"] = {

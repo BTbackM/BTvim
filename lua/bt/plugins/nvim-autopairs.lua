@@ -3,7 +3,7 @@ if not vim.g.nvim_autopairs then
 end
 
 return {
-  "windwp/nvim-autopairs",
-  event = "InsertEnter",
-  config = true,
+	"windwp/nvim-autopairs",
+	event = "InsertEnter",
+	config = true,
 }

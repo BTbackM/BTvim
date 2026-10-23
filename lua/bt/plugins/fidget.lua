@@ -3,6 +3,6 @@ if not vim.g.fidget then
 end
 
 return {
-  "j-hui/fidget.nvim",
-  opts = {},
+	"j-hui/fidget.nvim",
+	opts = {},
 }

@@ -1,6 +1,6 @@
-local keymaps = require "bt.config.keymaps"
-local settings = require "bt.config.settings"
+local keymaps = require("bt.config.keymaps")
+local settings = require("bt.config.settings")
 
 keymaps.load()
 settings.load()
-require "bt.config.autocmds"
+require("bt.config.autocmds")

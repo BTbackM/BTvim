@@ -1,4 +1,4 @@
-local colors = require "bt.colorscheme.gruvbox.colors"
+local colors = require("bt.colorscheme.gruvbox.colors")
 
 return {
 	["NvimTreeFolderIcon"] = {
@@ -6,10 +6,10 @@ return {
 		bold = true,
 		italic = false,
 	},
-	["NvimTreeFolderName"] = { link = "NvimTreeFolderIcon"},
-	["NvimTreeOpenedFolderName"] = { link = "NvimTreeFolderIcon"},
-	["NvimTreeEmptyFolderName"] = { link = "NvimTreeFolderIcon"},
-	["NvimTreeRootFolder"] = { link = "NvimTreeFolderIcon"},
+	["NvimTreeFolderName"] = { link = "NvimTreeFolderIcon" },
+	["NvimTreeOpenedFolderName"] = { link = "NvimTreeFolderIcon" },
+	["NvimTreeEmptyFolderName"] = { link = "NvimTreeFolderIcon" },
+	["NvimTreeRootFolder"] = { link = "NvimTreeFolderIcon" },
 	["NvimTreeGitFileDirtyHL"] = {
 		fg = colors["custom"].red,
 		bold = false,

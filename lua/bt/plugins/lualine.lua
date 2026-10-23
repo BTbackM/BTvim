@@ -3,13 +3,13 @@ if not vim.g.lualine then
 end
 
 local function lualine_config(_, opts)
-  require "lualine".setup(opts)
+	require("lualine").setup(opts)
 end
 
 local opts = {
-  options = {
-    icons_enabled = true,
-    theme = "auto",
+	options = {
+		icons_enabled = true,
+		theme = "auto",
 		disabled_filetypes = { "NvimTree" },
 		component_separators = {
 			left = "",
@@ -19,16 +19,16 @@ local opts = {
 			left = "",
 			right = "",
 		},
-  },
+	},
 }
 
 return {
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = opts,
-    config = lualine_config,
-  },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = opts,
+		config = lualine_config,
+	},
 }

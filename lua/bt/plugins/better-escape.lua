@@ -7,6 +7,6 @@ local function better_escape_config()
 end
 
 return {
-  "max397574/better-escape.nvim",
-  config = better_escape_config
+	"max397574/better-escape.nvim",
+	config = better_escape_config,
 }
