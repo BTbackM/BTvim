@@ -1,4 +1,4 @@
-if true then
+if not vim.g.nvim_cmp then
 	return {}
 end
 
@@ -22,7 +22,6 @@ local function cmp_config()
 	local luasnip = require("luasnip")
 
 	local ConfirmBehavior = cmp_types.ConfirmBehavior
-	local SelectBehavior = cmp_types.SelectBehavior
 	local opts = {
 		auto_brackets = {},
 		completion = {
@@ -140,8 +139,6 @@ local function cmp_config()
 
 	require("cmp").setup(opts)
 end
-
-local opts = {}
 
 return {
 	{

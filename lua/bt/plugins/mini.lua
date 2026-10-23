@@ -1,3 +1,7 @@
+if not vim.g.mini then
+	return {}
+end
+
 return {
 	{
 		"echasnovski/mini.nvim",

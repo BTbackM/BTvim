@@ -29,7 +29,7 @@ return {
 		neutral_purple = "#D3869B",
 		neutral_aqua = "#8EC07C",
 		neutral_gray = "#928374",
-		neutral_orange = "#FE8019"
+		neutral_orange = "#FE8019",
 	},
 	light = {
 		bg = "#FBF1C7",
@@ -61,21 +61,21 @@ return {
 		neutral_purple = "#B16286",
 		neutral_aqua = "#689D6A",
 		neutral_gray = "#7C6F64",
-		neutral_orange = "#D65D0E"
+		neutral_orange = "#D65D0E",
 	},
 	custom = {
 		black = "#3C3836",
 		gray = "#665C54",
 		blue = "#00204F",
-		green  ="#045404",
+		green = "#045404",
 		orange = "#AA4700",
 		-- orange = "#FF6600",
 		-- red = "#750104",
 		red = "#9D0006",
 		yellow = "#FFA400",
-    dark_yellow = "#B57614",
+		dark_yellow = "#B57614",
 		dark_purple = "#B6B5D8",
 		purple = "#3E2F84",
-    blue_gray = "#4A6462",
+		blue_gray = "#4A6462",
 	},
 }

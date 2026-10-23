@@ -1,4 +1,4 @@
-if true then
+if not vim.g.nvim_lspconfig then
 	return {
 		"neovim/nvim-lspconfig",
 		dependencies = {

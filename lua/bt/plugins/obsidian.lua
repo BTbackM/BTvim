@@ -1,4 +1,4 @@
-if false then
+if not vim.g.obsidian then
 	return {}
 end
 
@@ -27,7 +27,9 @@ local opts = {
 }
 
 return {
-	"obsidian-nvim/obsidian.nvim",
-	version = "*",
-	opts = opts,
+	{
+		"obsidian-nvim/obsidian.nvim",
+		version = "*",
+		opts = opts,
+	},
 }

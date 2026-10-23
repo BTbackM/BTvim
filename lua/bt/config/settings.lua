@@ -40,7 +40,35 @@ function M.load()
 	end
 
 	local globals = {
+		android_nvim = true,
 		have_nerd_font = true,
+		better_escape = true,
+		blink = true,
+		colorscheme = true,
+		conform = true,
+		dev_icons = true,
+		fidget = true,
+		flutter_tools = true,
+		gitsigns = true,
+		kotlin = true,
+		lualine = true,
+		mason = true,
+		mini = true,
+		nvim_autopairs = true,
+		nvim_cmp = false,
+		nvim_lint = true,
+		nvim_lspconfig = false,
+		nvim_tree = true,
+		nvim_treesitter = false,
+		nvim_treesitter_manager = false,
+		nvim_ufo = true,
+		obsidian = true,
+		rest = true,
+		rust = true,
+		snippets = true,
+		supermaven = true,
+		telescope = true,
+		which_key = true,
 	}
 
 	for k, v in pairs(globals) do

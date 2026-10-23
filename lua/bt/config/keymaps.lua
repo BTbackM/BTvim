@@ -21,7 +21,7 @@ function M.load()
 	kmap("n", "<M-i>", ":Inspect<CR>", opts)
 	kmap("n", "<C-s>", ":w<CR>", opts)
 	kmap("n", "<C-q>", ":q<CR>", opts)
-	kmap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+	kmap("n", "<leader>e", ":NvimTreeRefresh | :NvimTreeToggle<CR>", opts)
 	kmap("n", "<M-j>", ":m .+1<CR>==", opts)
 	kmap("n", "<M-k>", ":m .-2<CR>==", opts)
 

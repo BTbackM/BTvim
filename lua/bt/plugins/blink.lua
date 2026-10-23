@@ -1,4 +1,4 @@
-if false then
+if not vim.g.blink then
 	return {}
 end
 
@@ -37,7 +37,7 @@ local opts = {
 			"lazydev",
 			"lsp",
 			"path",
-			-- "supermaven",
+			"supermaven",
 			"snippets",
 			"buffer",
 		},
@@ -64,6 +64,7 @@ return {
 	dependencies = {
 		"L3MON4D3/LuaSnip",
 		"folke/lazydev.nvim",
+		"supermaven-inc/supermaven-nvim",
 	},
 	config = function()
 		vim.lsp.config("*", {

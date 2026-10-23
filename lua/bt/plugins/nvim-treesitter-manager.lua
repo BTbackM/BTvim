@@ -1,9 +1,9 @@
-if true then
+if not vim.g.nvim_treesitter_manager then
 	return {}
 end
 
 local opts = {
-  auto_install = true,
+	auto_install = true,
 	border = "rounded",
 	ensure_installed = {
 		"astro",
@@ -25,8 +25,8 @@ local opts = {
 		"vimdoc",
 		"yaml",
 	},
-  highlight = true,
-  languages = {}
+	highlight = true,
+	languages = {},
 }
 
 return {

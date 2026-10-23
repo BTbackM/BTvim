@@ -1,4 +1,4 @@
-if false then
+if vim.g.rust then
 	return {}
 end
 
@@ -12,6 +12,8 @@ local opts = {
 	},
 }
 
+local otps = {}
+
 return {
 	{
 		"mrcjkb/rustaceanvim",
@@ -24,7 +26,7 @@ return {
 		event = { "BufRead Cargo.toml" },
 		opts = opts,
 		config = function()
-			require("crates").setup()
+			require("crates").setup(otps)
 		end,
 	},
 }
