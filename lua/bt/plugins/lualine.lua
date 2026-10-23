@@ -1,4 +1,6 @@
-if false then return {} end
+if not vim.g.lualine then
+	return {}
+end
 
 local function lualine_config(_, opts)
   require "lualine".setup(opts)

@@ -1,4 +1,4 @@
-if false then
+if not vim.g.nvim_lint then
 	return {}
 end
 

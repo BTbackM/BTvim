@@ -1,11 +1,10 @@
-if false then
+if not vim.g.rest then
 	return {}
 end
 
 return {
 	{
 		"rest-nvim/rest.nvim",
-		enabled = true,
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter",
@@ -18,7 +17,6 @@ return {
 	},
 	{
 		"mistweaverco/kulala.nvim",
-		enabled = true,
 		keys = {
 			{ "<leader>rs", desc = "Send request" },
 			{ "<leader>ra", desc = "Send all requests" },

@@ -1,3 +1,7 @@
+if not vim.g.snippets then
+	return {}
+end
+
 return {
 	{
 		"L3MON4D3/LuaSnip",

@@ -1,4 +1,6 @@
-if false then return {} end
+if not vim.g.better_escape then
+	return {}
+end
 
 local function better_escape_config()
 	require("better_escape").setup()

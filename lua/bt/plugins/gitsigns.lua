@@ -1,4 +1,6 @@
-if false then return {} end
+if not vim.g.gitsigns then
+	return {}
+end
 
 local opts = {
   current_line_blame = false,

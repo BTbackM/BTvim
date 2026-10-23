@@ -1,4 +1,6 @@
-if false then return {} end
+if not vim.g.nvim_ufo then
+	return {}
+end
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}

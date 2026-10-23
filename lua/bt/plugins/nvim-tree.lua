@@ -1,4 +1,4 @@
-if false then
+if not vim.g.nvim_tree then
 	return {}
 end
 

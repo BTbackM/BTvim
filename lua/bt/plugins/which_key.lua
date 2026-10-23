@@ -1,4 +1,4 @@
-if false then
+if not vim.g.which_key then
 	return {}
 end
 
@@ -73,8 +73,10 @@ local kmaps = {
 }
 
 return {
-	"folke/which-key.nvim",
-	event = "VimEnter",
-	opts = opts,
-	keys = kmaps,
+	{
+		"folke/which-key.nvim",
+		event = "VimEnter",
+		opts = opts,
+		keys = kmaps,
+	},
 }

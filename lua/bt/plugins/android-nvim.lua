@@ -1,4 +1,4 @@
-if false then
+if not vim.g.android_nvim then
 	return {}
 end
 
