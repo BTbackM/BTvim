@@ -42,8 +42,6 @@ function M.load()
 	local globals = {
 		android_nvim = true,
 		have_nerd_font = true,
-		-- lazydev.nvim is declared in core.lua, general.lua, luadev.lua and
-		-- blink.lua; it is a blink dependency, so it stays ungated here.
 		better_escape = true,
 		blink = true,
 		colorscheme = true,
@@ -57,8 +55,12 @@ function M.load()
 		mason = true,
 		mini = true,
 		nvim_autopairs = true,
+		nvim_cmp = false,
 		nvim_lint = true,
+		nvim_lspconfig = false,
 		nvim_tree = true,
+		nvim_treesitter = false,
+		nvim_treesitter_manager = false,
 		nvim_ufo = true,
 		obsidian = true,
 		rest = true,

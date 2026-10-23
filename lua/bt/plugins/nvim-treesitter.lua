@@ -1,4 +1,4 @@
-if true then
+if not vim.g.nvim_treesitter then
 	return {}
 end
 
@@ -17,7 +17,7 @@ local opts = {
 		"markdown",
 		"markdown_inline",
 		"python",
-    "rust",
+		"rust",
 		"sql",
 		"typescript",
 		"vim",
@@ -49,7 +49,7 @@ return {
 			callback = function()
 				local bt = vim.bo.buftype
 				local filetype = vim.bo.filetype
-				local lang = vim.treesitter.language.get_lang(filetype)
+				local lang = vim.treesitter.language.get_lang(filetype) or "markdown"
 
 				-- Don't do anything for help buffers
 				if bt ~= "" then
@@ -62,12 +62,12 @@ return {
 			end,
 		})
 
-		vim.api.nvim_create_autocmd("TSChanged", {
-			callback = function()
-				local nts = require("nvim-treesitter")
-				nts.install(opts.ensure_installed)
-			end,
-		})
+		-- vim.api.nvim_create_autocmd("TSChanged", {
+		-- 	callback = function()
+		-- 		local nts = require("nvim-treesitter")
+		-- 		nts.install(opts.ensure_installed)
+		-- 	end,
+		-- })
 	end,
 	opts = opts,
 	config = function()
