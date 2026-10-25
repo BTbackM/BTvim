@@ -1,11 +1,24 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 vim.lsp.config("lua_ls", {
+	filetypes = { "lua", "c" },
+	root_markers = {
+		".luarc.json",
+		".luarc.jsonc",
+		".luacheckrc",
+		".stylua.toml",
+		"stylua.toml",
+		"selene.toml",
+		"selene.yml",
+		".git",
+	},
 	settings = {
 		Lua = {
 			runtime = { version = "LuaJIT" },
 			completion = { callSnippet = "Replace" },
-			workspace = { checkThirdParty = false },
+			workspace = {
+				checkThirdParty = false,
+			},
 		},
 	},
 })
@@ -50,6 +63,7 @@ vim.lsp.enable({
 	"angularls",
 	"astro",
 	"basedpyright",
+	"bashls",
 	"cssls",
 	-- "csharp_ls",
 	"gopls",
