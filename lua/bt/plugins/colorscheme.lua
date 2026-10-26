@@ -36,6 +36,7 @@ local function get_highlights()
 	local cs_hl = require("bt.colorscheme.gruvbox.hl.lsp.cs")
 	local css_hl = require("bt.colorscheme.gruvbox.hl.lsp.css")
 	local dart_hl = require("bt.colorscheme.gruvbox.hl.lsp.dart")
+	local git_hl = require("bt.colorscheme.gruvbox.hl.lsp.git")
 	local go_hl = require("bt.colorscheme.gruvbox.hl.lsp.go")
 	local js_hl = require("bt.colorscheme.gruvbox.hl.lsp.js")
 	local json_hl = require("bt.colorscheme.gruvbox.hl.lsp.json")
@@ -48,6 +49,7 @@ local function get_highlights()
 	local py_hl = require("bt.colorscheme.gruvbox.hl.lsp.py")
 	local razor_hl = require("bt.colorscheme.gruvbox.hl.lsp.razor")
 	local rust_hl = require("bt.colorscheme.gruvbox.hl.lsp.rust")
+	local sh_hl = require("bt.colorscheme.gruvbox.hl.lsp.sh")
 	local tmux_hl = require("bt.colorscheme.gruvbox.hl.lsp.tmux")
 	local toml_hl = require("bt.colorscheme.gruvbox.hl.lsp.toml")
 	local ts_hl = require("bt.colorscheme.gruvbox.hl.lsp.ts")
@@ -62,6 +64,7 @@ local function get_highlights()
 		cs_hl,
 		css_hl,
 		dart_hl,
+		git_hl,
 		go_hl,
 		js_hl,
 		json_hl,
@@ -74,6 +77,7 @@ local function get_highlights()
 		py_hl,
 		razor_hl,
 		rust_hl,
+		sh_hl,
 		tmux_hl,
 		toml_hl,
 		ts_hl
