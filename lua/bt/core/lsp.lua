@@ -75,6 +75,7 @@ vim.lsp.enable({
 	"roslyn",
 	"ruff",
 	"tailwindcss",
+	"taplo",
 	"ts_ls",
 })
 
