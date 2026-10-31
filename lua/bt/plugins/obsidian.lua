@@ -16,8 +16,8 @@ local opts = {
 	picker = {
 		name = "telescope.nvim",
 	},
-	ui = {
-		checkboxes = {
+	checkbox = {
+		order = {
 			[">"] = { char = "󰧚", hl_group = "ObsidianRightArrow" },
 			["~"] = { char = "", hl_group = "ObsidianTilde" },
 			["!"] = { char = "", hl_group = "ObsidianImportant" },
