@@ -72,7 +72,7 @@ return {
 		dark_blue = oklch(0.18, 0.15, 270.00),
 		neutral_blue = oklch(0.48, 0.05, 200.00),
 		green = oklch(0.38729470, 0.12840683, 142.58881157),
-		orange = oklch(0.38, 0.55, 50.20),
+		orange = oklch(0.68, 0.15, 50.20),
 		-- orange = oklch(0.69579341, 0.20425910, 43.49103689),
 		red = oklch(0.30, 0.25, 20.25),
 		yellow = oklch(0.60, 0.15, 75.15),
