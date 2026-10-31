@@ -53,6 +53,7 @@ local function get_highlights()
 	local tmux_hl = require("bt.colorscheme.gruvbox.hl.lsp.tmux")
 	local toml_hl = require("bt.colorscheme.gruvbox.hl.lsp.toml")
 	local ts_hl = require("bt.colorscheme.gruvbox.hl.lsp.ts")
+	local zsh_hl = require("bt.colorscheme.gruvbox.hl.lsp.zsh")
 
 	hls = concat_highlights(
 		hls,
@@ -80,7 +81,8 @@ local function get_highlights()
 		sh_hl,
 		tmux_hl,
 		toml_hl,
-		ts_hl
+		ts_hl,
+		zsh_hl
 	)
 
 	return hls
