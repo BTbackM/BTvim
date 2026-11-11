@@ -59,6 +59,7 @@ local opts = {
 		"angular-language-server", -- Angular
 		"astro-language-server", -- Astro
 		"basedpyright", -- Python
+		"bash-language-server",
 		"css-lsp", -- CSS
 		-- "csharp_ls", -- C#
 		"gopls", -- Go
@@ -70,6 +71,7 @@ local opts = {
 		"roslyn", -- C#
 		"rust-analyzer", -- Rust
 		"tailwindcss-language-server", -- CSS
+		"taplo",
 		"typescript-language-server", -- TS
 		"vtsls", -- TS
 

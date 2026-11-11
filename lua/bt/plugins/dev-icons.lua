@@ -22,6 +22,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		config = function()
 			require("nvim-web-devicons").setup(opts)
+			require("nvim-web-devicons").set_default_icon("", colors["custom"].blue, 65)
 		end,
 	},
 }

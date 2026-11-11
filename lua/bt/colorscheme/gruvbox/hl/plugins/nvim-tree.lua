@@ -33,4 +33,9 @@ return {
 		bold = true,
 		italic = false,
 	},
+	["NvimTreeExecFile"] = {
+		fg = colors["custom"].dark_pink,
+		bold = false,
+		italic = false,
+	},
 }

@@ -37,7 +37,7 @@ local opts = {
 			"lazydev",
 			"lsp",
 			"path",
-			"supermaven",
+			-- "supermaven",
 			"snippets",
 			"buffer",
 		},

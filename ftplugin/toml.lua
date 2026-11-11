@@ -1,3 +1,7 @@
+if not vim.fs.root(0, "Cargo.toml") then
+	return
+end
+
 local crates = require("crates")
 
 vim.keymap.set("n", "<leader>rd", crates.open_documentation, { desc = "Open documentation" })

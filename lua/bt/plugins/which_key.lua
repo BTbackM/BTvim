@@ -61,7 +61,10 @@ local kmaps = {
 	{
 		"<leader>cf",
 		function()
-			require("conform").format({ lsp_fallback = true })
+			require("conform").format({
+				timeout_ms = 5000,
+				lsp_format = "fallback",
+			})
 		end,
 		desc = "Conform format",
 	},
