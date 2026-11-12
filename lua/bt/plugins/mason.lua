@@ -66,6 +66,7 @@ local opts = {
 		"html-lsp", -- HTML
 		-- "kotlin-language-server", -- Kotlin
 		"kotlin-lsp", -- Kotlin
+		"lemminx", -- XML
 		"lua-language-server", -- Lua
 		-- "omnisharp", -- C#
 		"roslyn", -- C#

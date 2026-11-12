@@ -59,6 +59,18 @@ vim.lsp.config("cssls", {
 	},
 })
 
+vim.lsp.config("lemminx", {
+	settings = {
+		xml = {
+			format = {
+				enabled = true,
+				splitAttributes = "preserve",
+				maxLineWidth = 120,
+			},
+		},
+	},
+})
+
 vim.lsp.enable({
 	"angularls",
 	"astro",
@@ -70,6 +82,7 @@ vim.lsp.enable({
 	"html",
 	-- "kotlin_language_server",
 	"kotlin_lsp",
+	"lemminx",
 	"lua_ls",
 	-- "omnisharp",
 	"roslyn",
