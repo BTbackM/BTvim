@@ -78,6 +78,11 @@ return {
 			vim.keymap.set("n", "<leader>fl", builtin.live_grep, { desc = "Live grep" })
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Grep" })
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "Recent" })
+			vim.keymap.set("n", "<leader>fm", function()
+				require("telescope.builtin").lsp_document_symbols({
+					symbols = { "Method", "Function", "Constructor" },
+				})
+			end, { desc = "Methods" })
 
 			-- Git keymaps
 			vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Branches" })

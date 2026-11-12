@@ -45,6 +45,7 @@ local opts = {
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>c", group = "Conform" },
 			{ "<leader>R", group = "Request" },
+			{ "<leader>d", group = "Diagnostics" },
 		},
 	},
 }
@@ -67,6 +68,50 @@ local kmaps = {
 			})
 		end,
 		desc = "Conform format",
+	},
+
+	-- Diagnostics
+	{
+		"<leader>dn",
+		function()
+			vim.diagnostic.jump({
+				count = 1,
+				float = true,
+			})
+		end,
+		desc = "Next diagnostic",
+	},
+	{
+		"<leader>dp",
+		function()
+			vim.diagnostic.jump({
+				count = -1,
+				float = true,
+			})
+		end,
+		desc = "Prev diagnostic",
+	},
+	{
+		"<leader>dN",
+		function()
+			vim.diagnostic.jump({
+				count = 1,
+				float = true,
+				severity = vim.diagnostic.severity.ERROR,
+			})
+		end,
+		desc = "Next error",
+	},
+	{
+		"<leader>dP",
+		function()
+			vim.diagnostic.jump({
+				count = -1,
+				float = true,
+				severity = vim.diagnostic.severity.ERROR,
+			})
+		end,
+		desc = "Prev error",
 	},
 
 	-- Rest
