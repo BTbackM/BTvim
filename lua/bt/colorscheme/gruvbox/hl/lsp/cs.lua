@@ -43,9 +43,22 @@ return {
 	["@lsp.type.identifier.cs"] = { link = "@function" },
 	["@lsp.type.parameter.cs"] = { link = "GruvboxFg1" },
 	["@lsp.type.controlKeyword.cs"] = { link = "@keyword" },
-	["@lsp.type.property.cs"] = {
-		fg = colors["custom"].dark_blue,
+	["@lsp.type.property.cs"] = { link = "GruvboxFg1" },
+	["@lsp.type.preprocessorText.cs"] = { link = "@string" },
+	["@lsp.type.macro.cs"] = {
+		fg = colors["custom"].blue,
+		bold = true,
+		italic = false,
+	},
+	["@lsp.type.label.cs"] = {
+		fg = colors["custom"].dark_pink,
+		bold = true,
+		italic = false,
+	},
+	["@lsp.type.enumMember.cs"] = {
+		fg = colors["custom"].dark_pink,
 		bold = false,
 		italic = false,
 	},
+	["@lsp.type.enum.cs"] = { link = "class.cs" },
 }
