@@ -30,6 +30,7 @@ local function get_highlights()
 	local nvim_cmp_hl = require("bt.colorscheme.gruvbox.hl.plugins.nvim-cmp")
 	local nvim_tree_hl = require("bt.colorscheme.gruvbox.hl.plugins.nvim-tree")
 	local nvim_treesitter_hl = require("bt.colorscheme.gruvbox.hl.plugins.nvim-treesitter")
+	local snippets_hl = require("bt.colorscheme.gruvbox.hl.plugins.snippets")
 
 	-- LSP highlight
 	local astro_hl = require("bt.colorscheme.gruvbox.hl.lsp.astro")
@@ -62,6 +63,7 @@ local function get_highlights()
 		nvim_cmp_hl,
 		nvim_tree_hl,
 		nvim_treesitter_hl,
+		snippets_hl,
 		astro_hl,
 		cs_hl,
 		css_hl,
