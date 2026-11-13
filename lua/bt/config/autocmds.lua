@@ -1,3 +1,13 @@
+local function map_csproj_picker(bufnr, root)
+	vim.keymap.set("n", "<leader>fp", function()
+		require("telescope.builtin").find_files({
+			cwd = root,
+			find_command = { "rg", "--files", "--glob", "*.csproj" },
+			prompt_title = "C# Projects",
+		})
+	end, { buffer = bufnr, desc = "LSP: Find C# projects" })
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)
@@ -27,10 +37,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		if client and client.name == "roslyn" then
+			map_csproj_picker(event.buf, client.root_dir)
+		end
+
 		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
 			kmap("<leader>th", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 			end, "Toggle inlay hints")
+		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = vim.api.nvim_create_augroup("roslyn-csproj", { clear = true }),
+	pattern = "*.csproj",
+	callback = function(event)
+		local file = vim.fs.normalize(vim.api.nvim_buf_get_name(event.buf))
+		for _, client in ipairs(vim.lsp.get_clients({ name = "roslyn" })) do
+			local root = client.root_dir and vim.fs.normalize(client.root_dir)
+			if root and file:sub(1, #root + 1) == root .. "/" then
+				map_csproj_picker(event.buf, client.root_dir)
+				return
+			end
 		end
 	end,
 })
